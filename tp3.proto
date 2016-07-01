@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "br.cefetmg.sd.12016.tp3";
+option java_outer_classname = "TP3Proto";
+option objc_class_prefix = "HLW";
+
+package tp3;
+
+// Cria o servi
+service TP3 {
+  // Sends a greeting
+  rpc Find (FindRequest) returns (FindReply) {}
+  rpc Update (UpdateRequest) returns (UpdateReply) {}
+  rpc Store (StoreRequest) returns (StoreReply) {}
+}
+
+// The request message containing the user's name.
+message FindRequest {
+  string k = 1;
+}
+
+// The response message containing the greetings
+message FindReply {
+  string nodes = 1;
+}
+
+// The request message containing the user's name.
+message UpdateRequest {
+  string k = 1;
+  string v = 2;
+}
+
+// The response message containing the greetings
+message UpdateReply {
+    string reply = 1;
+}
+
+// The request message containing the user's name.
+message StoreRequest {
+  string k = 1;
+  string v = 2;
+}
+
+// The response message containing the greetings
+message StoreReply {
+  string reply = 1;
+}
